@@ -16,16 +16,15 @@
 body{
   background:#0f0f0f;
   color:#fff;
-  scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+/* NAV */
 header{
   position:sticky;
   top:0;
   background:#111;
-  z-index:1000;
   padding:15px 0;
+  z-index:999;
 }
 
 .container{
@@ -37,27 +36,15 @@ header{
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.logo-box{
-  width:40px;
-  height:40px;
-  background:#ffcc00;
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   font-weight:bold;
-  border-radius:5px;
+  color:#ffcc00;
+  font-size:18px;
 }
 
 nav a{
   color:#fff;
-  text-decoration:none;
   margin-left:15px;
+  text-decoration:none;
 }
 
 nav a:hover{
@@ -68,31 +55,30 @@ nav a:hover{
 .hero{
   height:90vh;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  background:
-  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
   url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
 }
 
 .hero h1{
-  font-size:45px;
+  font-size:40px;
 }
 
 .hero p{
-  margin:15px 0;
-  color:#ddd;
+  margin:10px 0;
+  color:#ccc;
 }
 
 .btn{
   display:inline-block;
   padding:10px 20px;
+  margin:5px;
   background:#ffcc00;
   color:#000;
-  margin:5px;
-  border-radius:5px;
   text-decoration:none;
+  border-radius:5px;
   font-weight:bold;
 }
 
@@ -105,19 +91,18 @@ nav a:hover{
 /* SECTIONS */
 .section{
   padding:60px 10%;
+  text-align:center;
 }
 
 .dark{
   background:#181818;
 }
 
-.title{
-  text-align:center;
-  font-size:28px;
-  margin-bottom:30px;
+h2{
+  margin-bottom:20px;
 }
 
-/* SERVICES */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -128,12 +113,11 @@ nav a:hover{
   background:#222;
   padding:20px;
   border-radius:10px;
-  text-align:center;
 }
 
-/* PORTFOLIO */
+/* PORTFOLIO BOX */
 .box{
-  height:150px;
+  height:140px;
   background:#333;
   border-radius:10px;
 }
@@ -143,7 +127,6 @@ nav a:hover{
   background:#222;
   padding:30px;
   border-radius:10px;
-  text-align:center;
 }
 
 /* FOOTER */
@@ -160,11 +143,7 @@ footer{
 
 <header>
   <div class="container">
-    <div class="logo">
-      <div class="logo-box">FC</div>
-      <h2>FotoCross</h2>
-    </div>
-
+    <div class="logo">FotoCross</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
@@ -174,21 +153,18 @@ footer{
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div>
     <h1>Capturing Moments Forever</h1>
-    <p>Professional Photography Services in Cicero, Indiana</p>
+    <p>Professional Photography Services</p>
 
-    <a class="btn" href="tel:3176256113">Call Now</a>
-    <a class="btn btn-outline" href="https://wa.me/13176256113" target="_blank">WhatsApp</a>
+    <a href="tel:3176256113" class="btn">Call Now</a>
+    <a href="https://wa.me/13176256113" class="btn btn-outline">WhatsApp</a>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section" id="services">
-  <h2 class="title">Our Services</h2>
-
+  <h2>Our Services</h2>
   <div class="grid">
     <div class="card">Wedding Photography</div>
     <div class="card">Event Coverage</div>
@@ -197,42 +173,33 @@ footer{
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section class="section dark" id="portfolio">
-  <h2 class="title">Portfolio</h2>
-
+  <h2>Portfolio</h2>
   <div class="grid">
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
-  <h2 class="title">Contact Us</h2>
+  <h2>Contact</h2>
 
   <div class="contact">
-    <p><b>Phone:</b> (317) 625-6113</p>
+    <p><b>Phone:</b> 317-625-6113</p>
     <p><b>Email:</b> bcross@fotocrossphotography.com</p>
-    <p><b>Address:</b> 13013 E 256th St, Cicero, IN 46034</p>
+    <p><b>Address:</b> Cicero, Indiana</p>
 
     <br>
 
-    <a class="btn" href="mailto:bcross@fotocrossphotography.com">Send Email</a>
+    <a href="mailto:bcross@fotocrossphotography.com" class="btn">Send Email</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 FotoCross Photography. All Rights Reserved.</p>
+  <p>© 2026 FotoCross Photography</p>
 </footer>
-
-<script>
-console.log("FotoCross Photography website loaded");
-</script>
 
 </body>
 </html>
