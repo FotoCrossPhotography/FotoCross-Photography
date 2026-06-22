@@ -1,80 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FotoCross Photography</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FotoCross Photography</title>
 
-<header>
-  <div class="container nav">
-    <div class="logo">
-      <div class="logo-box">FC</div>
-      <h1>FotoCross Photography</h1>
-    </div>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h2>Capturing Moments That Last Forever</h2>
-    <p>Professional Photography Services in Cicero, Indiana</p>
-    <div class="hero-buttons">
-      <a href="tel:3176256113" class="btn">Call Now</a>
-      <a href="https://wa.me/13176256113" target="_blank" class="btn btn-outline">WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <h2 class="section-title">Our Services</h2>
-  <div class="grid">
-    <div class="card">Wedding Photography</div>
-    <div class="card">Event Coverage</div>
-    <div class="card">Portrait Shoots</div>
-    <div class="card">Product Photography</div>
-  </div>
-</section>
-
-<section class="section dark" id="portfolio">
-  <h2 class="section-title">Portfolio</h2>
-  <div class="grid">
-    <div class="img-box"></div>
-    <div class="img-box"></div>
-    <div class="img-box"></div>
-    <div class="img-box"></div>
-    <div class="img-box"></div>
-    <div class="img-box"></div>
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <h2 class="section-title">Contact Us</h2>
-  <div class="contact-box">
-    <p><strong>Phone:</strong> (317) 625-6113</p>
-    <p><strong>Email:</strong> bcross@fotocrossphotography.com</p>
-    <p><strong>Address:</strong> 13013 E 256th St, Cicero, IN 46034, USA</p>
-    <a href="mailto:bcross@fotocrossphotography.com" class="btn">Send Email</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 FotoCross Photography. All Rights Reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-style.css
+<style>
 *{
   margin:0;
   padding:0;
@@ -85,14 +16,16 @@ style.css
 body{
   background:#0f0f0f;
   color:#fff;
+  scroll-behavior:smooth;
 }
 
+/* NAVBAR */
 header{
-  background:#111;
-  padding:15px 0;
   position:sticky;
   top:0;
+  background:#111;
   z-index:1000;
+  padding:15px 0;
 }
 
 .container{
@@ -115,34 +48,36 @@ header{
   background:#ffcc00;
   color:#000;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   font-weight:bold;
   border-radius:5px;
 }
 
 nav a{
   color:#fff;
-  margin-left:15px;
   text-decoration:none;
+  margin-left:15px;
 }
 
 nav a:hover{
   color:#ffcc00;
 }
 
+/* HERO */
 .hero{
   height:90vh;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
+  background:
+  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
 }
 
-.hero h2{
-  font-size:40px;
+.hero h1{
+  font-size:45px;
 }
 
 .hero p{
@@ -156,8 +91,8 @@ nav a:hover{
   background:#ffcc00;
   color:#000;
   margin:5px;
-  text-decoration:none;
   border-radius:5px;
+  text-decoration:none;
   font-weight:bold;
 }
 
@@ -167,20 +102,22 @@ nav a:hover{
   color:#ffcc00;
 }
 
+/* SECTIONS */
 .section{
   padding:60px 10%;
 }
 
-.section.dark{
+.dark{
   background:#181818;
 }
 
-.section-title{
+.title{
   text-align:center;
-  margin-bottom:30px;
   font-size:28px;
+  margin-bottom:30px;
 }
 
+/* SERVICES */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -190,25 +127,112 @@ nav a:hover{
 .card{
   background:#222;
   padding:20px;
-  text-align:center;
   border-radius:10px;
+  text-align:center;
 }
 
-.img-box{
+/* PORTFOLIO */
+.box{
   height:150px;
   background:#333;
   border-radius:10px;
 }
 
-.contact-box{
-  text-align:center;
+/* CONTACT */
+.contact{
   background:#222;
   padding:30px;
   border-radius:10px;
+  text-align:center;
 }
 
+/* FOOTER */
 footer{
+  background:#111;
   text-align:center;
   padding:20px;
-  background:#111;
+  margin-top:20px;
 }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-box">FC</div>
+      <h2>FotoCross</h2>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <h1>Capturing Moments Forever</h1>
+    <p>Professional Photography Services in Cicero, Indiana</p>
+
+    <a class="btn" href="tel:3176256113">Call Now</a>
+    <a class="btn btn-outline" href="https://wa.me/13176256113" target="_blank">WhatsApp</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <h2 class="title">Our Services</h2>
+
+  <div class="grid">
+    <div class="card">Wedding Photography</div>
+    <div class="card">Event Coverage</div>
+    <div class="card">Portrait Shoots</div>
+    <div class="card">Product Photography</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section dark" id="portfolio">
+  <h2 class="title">Portfolio</h2>
+
+  <div class="grid">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2 class="title">Contact Us</h2>
+
+  <div class="contact">
+    <p><b>Phone:</b> (317) 625-6113</p>
+    <p><b>Email:</b> bcross@fotocrossphotography.com</p>
+    <p><b>Address:</b> 13013 E 256th St, Cicero, IN 46034</p>
+
+    <br>
+
+    <a class="btn" href="mailto:bcross@fotocrossphotography.com">Send Email</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FotoCross Photography. All Rights Reserved.</p>
+</footer>
+
+<script>
+console.log("FotoCross Photography website loaded");
+</script>
+
+</body>
+</html>
