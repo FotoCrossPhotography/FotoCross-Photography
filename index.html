@@ -1,190 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>FotoCross Photography</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0f0f0f;
-  color:white;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+
+body{line-height:1.6;color:#333;background:#fff;}
 
 /* HEADER */
 header{
-  background:#111;
-  padding:15px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  width:90%;
-  margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#111;
+color:#fff;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-  font-weight:bold;
-  color:#ffcc00;
-  font-size:20px;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
+.logo img{
+height:50px;
+width:50px;
+object-fit:contain;
+border-radius:5px;
 }
 
-nav a:hover{
-  color:#ffcc00;
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+}
+
+nav ul li a:hover{
+color:#ff4b4b;
 }
 
 /* HERO */
 .hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
+height:90vh;
+background:url("https://images.unsplash.com/photo-1529634806980-85c3dd6d4e3a?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+position:relative;
 }
 
-.hero h1{
-  font-size:42px;
+.hero::after{
+content:"";
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
 }
 
-.hero p{
-  color:#ccc;
-  margin:10px 0;
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
 }
+
+.hero h1{font-size:48px;margin-bottom:15px;}
+.hero p{font-size:18px;margin-bottom:20px;}
 
 .btn{
-  padding:10px 18px;
-  margin:5px;
-  background:#ffcc00;
-  color:black;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:bold;
-  display:inline-block;
+display:inline-block;
+padding:12px 25px;
+margin:5px;
+border-radius:5px;
+text-decoration:none;
+color:#fff;
+font-weight:bold;
 }
 
-.btn2{
-  background:transparent;
-  border:2px solid #ffcc00;
-  color:#ffcc00;
-}
+.btn-primary{background:#ff4b4b;}
+.btn-whatsapp{background:#25D366;}
+.btn-call{background:#007bff;}
 
 /* SECTIONS */
-section{
-  padding:60px 20px;
-  text-align:center;
+section{padding:60px 40px;}
+
+.section-title{
+text-align:center;
+font-size:32px;
+margin-bottom:40px;
 }
 
-.dark{
-  background:#181818;
+/* ABOUT */
+.about p{
+max-width:800px;
+margin:auto;
+text-align:center;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  width:90%;
-  margin:auto;
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.card{
-  background:#222;
-  padding:20px;
-  border-radius:10px;
+.service-card{
+border:1px solid #eee;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+background:#fff;
+}
+
+.service-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.service-card h3{
+padding:10px;
+}
+
+.service-card p{
+padding:0 10px 15px;
+font-size:14px;
+}
+
+/* REVIEWS */
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.review{
+padding:20px;
+border-radius:10px;
+background:#f9f9f9;
+}
+
+/* FAQ */
+.faq-item{
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:5px;
+overflow:hidden;
+}
+
+.faq-question{
+padding:15px;
+background:#f1f1f1;
+cursor:pointer;
+font-weight:bold;
+}
+
+.faq-answer{
+display:none;
+padding:15px;
+background:#fff;
 }
 
 /* CONTACT */
-.contact{
-  background:#222;
-  padding:25px;
-  border-radius:10px;
-  display:inline-block;
+.contact-info{
+text-align:center;
+line-height:2;
 }
 
 /* FOOTER */
 footer{
-  background:#111;
-  text-align:center;
-  padding:15px;
+background:#111;
+color:#fff;
+padding:40px;
 }
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+footer a{color:#fff;text-decoration:none;display:block;margin:5px 0;}
+
+.map iframe{
+width:100%;
+height:200px;
+border:0;
+margin-top:10px;
+}
+
+/* FLOAT BUTTONS */
+.float-buttons{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:1000;
+}
+
+.float-buttons a{
+padding:12px 15px;
+border-radius:50px;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+text-align:center;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <nav>
-    <div class="logo">FotoCross</div>
-    <div>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<div class="logo">
+<img src="/mnt/data/image(12).png" alt="Logo">
+<strong>FotoCross Photography</strong>
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 </header>
 
-<section class="hero" id="home">
-  <h1>Capturing Moments Forever</h1>
-  <p>Professional Photography Services in Indiana</p>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-content">
+<h1>Capture Your Perfect Moments</h1>
+<p>Professional photography for weddings, events, birthdays, and corporate celebrations.</p>
+<a href="tel:3176256113" class="btn btn-call">Call Now</a>
+<a href="https://wa.me/13176256113" class="btn btn-whatsapp">WhatsApp</a>
+</div>
+</div>
 
-  <div>
-    <a class="btn" href="tel:3176256113">Call Now</a>
-    <a class="btn btn2" href="https://wa.me/13176256113">WhatsApp</a>
-  </div>
+<!-- ABOUT -->
+<section id="about" class="about">
+<h2 class="section-title">About Us</h2>
+<p>
+Welcome to FotoCross Photography, where every celebration shines. We capture weddings, birthdays, corporate events, and all special occasions with creativity, emotion, and detail. Our mission is to turn your moments into timeless memories.
+</p>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card">Wedding Photography</div>
-    <div class="card">Event Coverage</div>
-    <div class="card">Portrait Shoots</div>
-    <div class="card">Product Photography</div>
-  </div>
+<h2 class="section-title">Our Services</h2>
+
+<div class="services">
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80">
+<h3>Wedding Photography</h3>
+<p>Elegant wedding shoots capturing every emotional and beautiful moment.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
+<h3>Birthday Parties</h3>
+<p>Fun and vibrant photography for unforgettable birthday memories.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&q=80">
+<h3>Corporate Events</h3>
+<p>Professional coverage for meetings, seminars, and corporate gatherings.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=800&q=80">
+<h3>Bridal/Baby Shower</h3>
+<p>Beautiful storytelling for your special family celebrations.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1520975922284-9a15a6b7b8f0?auto=format&fit=crop&w=800&q=80">
+<h3>Prom & Formal</h3>
+<p>Stylish and modern prom and formal event photography.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1520975682031-a1a2d7c3c0f1?auto=format&fit=crop&w=800&q=80">
+<h3>Reunions & Events</h3>
+<p>Capturing joyful moments of reunions, concerts, and gatherings.</p>
+</div>
+
+</div>
 </section>
 
-<section class="dark" id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="grid">
-    <div class="card">Image 1</div>
-    <div class="card">Image 2</div>
-    <div class="card">Image 3</div>
-    <div class="card">Image 4</div>
-  </div>
+<!-- REVIEWS -->
+<section>
+<h2 class="section-title">Customer Reviews</h2>
+<div class="reviews">
+<div class="review">"Amazing photography! They captured every moment perfectly." – Sarah</div>
+<div class="review">"Highly professional and creative team. Loved the results!" – Michael</div>
+<div class="review">"Best experience ever for our wedding shoot." – John</div>
+</div>
 </section>
 
+<!-- FAQ -->
+<section>
+<h2 class="section-title">FAQ's</h2>
+
+<div class="faq-item">
+<div class="faq-question">What events do you cover?</div>
+<div class="faq-answer">We cover weddings, birthdays, corporate events, and all special occasions.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Do you work 24/7?</div>
+<div class="faq-answer">Yes, we are available 24/7 for bookings and events.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">How can I book?</div>
+<div class="faq-answer">You can call us or WhatsApp us directly to book your event.</div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact Us</h2>
+<h2 class="section-title">Contact Us</h2>
 
-  <div class="contact">
-    <p><b>Phone:</b> 317-625-6113</p>
-    <p><b>Email:</b> bcross@fotocrossphotography.com</p>
-    <p><b>Address:</b> Cicero, Indiana</p>
-    <br>
-    <a class="btn" href="mailto:bcross@fotocrossphotography.com">Send Email</a>
-  </div>
+<div class="contact-info">
+<p><strong>Address:</strong> 13013 E 256th St, Cicero, IN 46034, USA</p>
+<p><strong>Phone:</strong> (317) 625-6113</p>
+<p><strong>Email:</strong> bcross@fotocrossphotography.com</p>
+<p><strong>Hours:</strong> 24/7</p>
+</div>
+
+<div class="map">
+<iframe src="https://www.google.com/maps?q=13013+E+256th+St,+Cicero,+IN+46034&output=embed"></iframe>
+</div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 FotoCross Photography
+<div class="footer-grid">
+
+<div>
+<h3>Quick Links</h3>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#blog">Blog</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div>
+<h3>Contact Info</h3>
+<p>13013 E 256th St, Cicero, IN</p>
+<p>(317) 625-6113</p>
+<p>bcross@fotocrossphotography.com</p>
+<p>24/7</p>
+</div>
+
+<div>
+<h3>Google Map</h3>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=13013+E+256th+St,+Cicero,+IN+46034&output=embed"></iframe>
+</div>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:20px;">
+© 2026 The Ranking Geeks. All Rights Reserved.
+</p>
 </footer>
+
+<!-- FLOAT BUTTONS -->
+<div class="float-buttons">
+<a href="tel:3176256113" class="btn-call">📞 Call</a>
+<a href="https://wa.me/13176256113" class="btn-whatsapp">💬 WhatsApp</a>
+</div>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(item=>{
+item.addEventListener("click",()=>{
+let ans = item.nextElementSibling;
+ans.style.display = ans.style.display === "block" ? "none" : "block";
+});
+});
+</script>
 
 </body>
 </html>
